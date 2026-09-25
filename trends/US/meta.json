@@ -2,10 +2,10 @@
   "geo": "US",
   "hours": 168,
   "source_url": "https://trends.google.com/trending?geo=US&hours=168",
-  "last_attempt_at": "2026-09-24T09:37:48Z",
+  "last_attempt_at": "2026-09-25T09:54:56Z",
   "status": "ok",
-  "fetched_at": "2026-09-24T09:37:48Z",
-  "row_count": 1789,
+  "fetched_at": "2026-09-25T09:54:56Z",
+  "row_count": 1779,
   "columns": [
     "Trends",
     "Search volume",
