@@ -56,7 +56,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nothing to commit"
           else
-            git commit -m "Trends export $(date -u +%Y-%m-%d) (${{ steps.export.outcome }})"
+                     git commit -m "Trends export $(date -u +%Y-%m-%d) (US: ${{ steps.export.outcome }}, BD: ${{ steps.export_bd.outcome }})"
             git push
           fi
 
