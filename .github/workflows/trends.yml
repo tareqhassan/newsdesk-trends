@@ -29,23 +29,22 @@ jobs:
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
 
-   - name: Export US trends
-     id: export
-     env:
-       TRENDS_GEO: "US"
-       TRENDS_HOURS: "168"
-       TRENDS_MIN_ROWS: "100"
-     run: python export_trends.py
+      - name: Export US trends
+        id: export
+        env:
+          TRENDS_GEO: "US"
+          TRENDS_HOURS: "168"
+          TRENDS_MIN_ROWS: "100"
+        run: python export_trends.py
 
-   - name: Export Bangladesh trends
-     id: export_bd
-     if: ${{ !cancelled() }}
-     env:
-       TRENDS_GEO: "BD"
-       TRENDS_HOURS: "168"
-       TRENDS_MIN_ROWS: "1"
-     run: python export_trends.py
-     
+      - name: Export Bangladesh trends
+        id: export_bd
+        if: ${{ !cancelled() }}
+        env:
+          TRENDS_GEO: "BD"
+          TRENDS_HOURS: "168"
+          TRENDS_MIN_ROWS: "1"
+        run: python export_trends.py
 
       - name: Commit results
         if: always()
@@ -56,7 +55,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nothing to commit"
           else
-                     git commit -m "Trends export $(date -u +%Y-%m-%d) (US: ${{ steps.export.outcome }}, BD: ${{ steps.export_bd.outcome }})"
+            git commit -m "Trends export $(date -u +%Y-%m-%d) (US: ${{ steps.export.outcome }}, BD: ${{ steps.export_bd.outcome }})"
             git push
           fi
 
