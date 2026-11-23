@@ -2,10 +2,10 @@
   "geo": "BD",
   "hours": 168,
   "source_url": "https://trends.google.com/trending?geo=BD&hours=168",
-  "last_attempt_at": "2026-11-22T12:59:45Z",
+  "last_attempt_at": "2026-11-23T15:39:16Z",
   "status": "ok",
-  "fetched_at": "2026-11-22T12:59:45Z",
-  "row_count": 674,
+  "fetched_at": "2026-11-23T15:39:16Z",
+  "row_count": 718,
   "columns": [
     "Trends",
     "Search volume",
